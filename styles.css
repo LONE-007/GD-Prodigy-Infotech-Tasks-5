@@ -1,41 +1,103 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
-    font-family: 'Times New Roman', serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background: linear-gradient(to top, LightSkyBlue, LightSteelBlue); /* Clear sky gradient */
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    overflow: hidden;
 }
 
+/* Glassmorphism Container */
 .container {
     text-align: center;
-    background: LightBlue; /* Soft light blue background */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 350px;
+    transition: transform 0.3s ease-in-out;
 }
 
-input {
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.container:hover {
+    transform: scale(1.02);
 }
 
-button {
-    padding: 10px 20px;
-    border: none;
-    background-color: DodgerBlue; /* Button background color */
+/* Heading */
+h1 {
     color: white;
-    border-radius: 5px;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Input Field */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-align: center;
+    box-shadow: inset 4px 4px 6px rgba(255, 255, 255, 0.1),
+                inset -4px -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: linear-gradient(135deg, #ff8c00, #ff6b00);
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: RoyalBlue; /* Button hover color */
+    background: linear-gradient(135deg, #ff6b00, #ff3b00);
+    transform: scale(1.05);
 }
 
+/* Weather Display Section */
 #weatherDisplay {
     margin-top: 20px;
+    color: white;
+    font-size: 18px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .container {
+        width: 90%;
+    }
 }
